@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>app</title>
+    <link rel="stylesheet" type="text/css" href="src/css/swiper-3.4.2.min.css">
+    <script>
+    	var w = document.documentElement.clientWidth || document.body.clientWidth;
+		document.documentElement.style.fontSize = (w/750*100)+"px";		
+		window.onresize = function()
+		{
+			var w = document.documentElement.clientWidth || document.body.clientWidth;
+			document.documentElement.style.fontSize = (w/750*100)+"px";		
+		}
+    </script>
+    <link rel="stylesheet" type="text/css" href="src/css/coom.css">
+  </head>
+  <body>
+    <div id="app">
+    	<router-view></router-view>
+    </div>
+    <script src="/dist/build.js"></script>
+  </body>
+</html>
