@@ -1,5 +1,6 @@
-html{font-size: 0.2rem; font-family: '微软雅黑'; }   
+html{font-size: 0.2rem; font-family: '微软雅黑'; background: #F6F6F6; }   
 ul,ol{list-style-type: none;}
 body,ul,ol,h1,h2,h3,h4,h5,h6,dl,dd,form,p{margin: 0px; padding: 0px;}
 h1{display: none;}
 img{display: block; width: 100%;}
+a{text-decoration: none;}
