@@ -2,7 +2,7 @@
 	<div class='category'>
 		<div class='nav'>
 			<ul>
-				<li @click='changeSelect()' :class="selectIdx==index? 'select' : ''" v-for='(item, index) in categoryList'>{{item}}</li>
+				<li @click='changeSelect(index)' :class="selectIdx==index? 'select' : ''" v-for='(item, index) in categoryList'>{{item}}</li>
 			</ul>
 		</div>
 		<div class='wppx'>
@@ -26,7 +26,7 @@
 	</div>
 </template>
 <style>
-	.category .select{color: #fb4c45 !important; border-color:#fb4c45; }
+	.category .select{color: #fb4c45 !important; border-bottom: 0.03rem solid #fb4c45 !important; }
 
 	
 	.category{font-size: 0.3rem;}
@@ -91,6 +91,54 @@
 						delprice : 1500,
 						xiaoliang : 500,
 						pinlun : 259
+					}],
+					[{
+						pic : pic2,
+						name : '皮具',
+						price : 1000,
+						delprice : 1500,
+						xiaoliang : 500,
+						pinlun : 259
+					},
+					{
+						pic : pic2,
+						name : '皮具',
+						price : 1000,
+						delprice : 1500,
+						xiaoliang : 500,
+						pinlun : 259
+					}],
+					[{
+						pic : pic2,
+						name : '抱枕',
+						price : 1000,
+						delprice : 1500,
+						xiaoliang : 500,
+						pinlun : 259
+					},
+					{
+						pic : pic2,
+						name : '抱枕',
+						price : 1000,
+						delprice : 1500,
+						xiaoliang : 500,
+						pinlun : 259
+					}],
+					[{
+						pic : pic2,
+						name : '游戏机',
+						price : 1000,
+						delprice : 1500,
+						xiaoliang : 500,
+						pinlun : 259
+					},
+					{
+						pic : pic2,
+						name : '游戏机',
+						price : 1000,
+						delprice : 1500,
+						xiaoliang : 500,
+						pinlun : 259
 					}]
 					
 				],
@@ -98,8 +146,8 @@
 			}
 		},
 		methods : {
-			changeSelect : function(){
-				alert(5)
+			changeSelect : function(index){
+				this.selectIdx = index;
 			}
 		},
 		mounted(){
