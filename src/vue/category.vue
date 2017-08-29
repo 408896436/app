@@ -8,7 +8,7 @@
 		<div class='wppx'>
 			<a class='select' href="javascript:;" title='新品排序'>新品排序</a>
 			<a href="javascript:;" title='销量排序'>销量排序</a>
-			<span class='hui'>共{{wpval}}件商品</span>
+			<span class='hui'>共{{wplist[selectIdx].length}}件商品</span>
 		</div>
 		<div class='wplist'>
 			<dl v-for='item in wplist[selectIdx]'>
@@ -61,6 +61,14 @@
 				categoryList : ['衣服', '手办', '皮具', '抱枕', '游戏机'],
 				wplist : [
 					[{
+						pic : pic3,
+						name : '大风衣',
+						price : 1000,
+						delprice : 1500,
+						xiaoliang : 500,
+						pinlun : 259
+					},
+					{
 						pic : pic3,
 						name : '大风衣',
 						price : 1000,
@@ -141,8 +149,7 @@
 						pinlun : 259
 					}]
 					
-				],
-				wpval : 5
+				]
 			}
 		},
 		methods : {
@@ -150,7 +157,7 @@
 				this.selectIdx = index;
 			}
 		},
-		mounted(){
+		beforeMount(){
 
 			//获取路由路径
 			const path = this.$root._route.params.name;
