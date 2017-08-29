@@ -11,17 +11,17 @@
        	</div>
 		<!-- banner E-->
 		<div class='wp_details'>
-			<h2>CF最新枪战模型X战1</h2>
-			<p>CF最新最潮的枪支，没有一直比这个还要厉害，这是最新出版的最厉害的了，快来买吧。</p>
+			<h2>{{title}}</h2>
+			<p>{{describe}}</p>
 		</div>
 		<div class='price_xl'>
 			<div class='price'>
-				<span class='nowPrice'>$229</span>
-				<span class='deletePrice'>$259</span>
+				<span class='nowPrice'>{{price | price}}</span>
+				<span class='deletePrice'>{{delPrice | price}}</span>
 			</div>	
 			<div class='jqxl'>
-				<span class='zkc'>总库存：500</span>
-				<span class='xl'>近期销量：200</span>
+				<span class='zkc'>总库存：{{kucun}}</span>
+				<span class='xl'>近期销量：{{xl}}</span>
 			</div>
 		</div>
 		<div class='nav' id='nav'>
@@ -30,7 +30,7 @@
 			<a href="javascript:;" title='买家评论'>买家评论</a>
 		</div>
 		<div class='wpdetails' id='wpdetails' style='display:nones;'>
-			<img src="../assets/pic5.jpg">
+			<img :src="wpdescribePic">
 		</div>
 		<div class='aboutwp' id='aboutwp' style='display:none;'>
 			<table border='1' cellspacing='0' cellpadding='0'>
@@ -68,50 +68,38 @@
 		<div class='pinlun' id='pinlun' style='display:none;'>
 			<div class='toppl'>
 				<div class='pinlun_val'>
-					评论（900条）
+					评论（{{userpinlun.length}}条）
 				</div>
 				<div class='zhpj'>
 					<h2>综合评价</h2>
 					<ul class='star'>
-						<li><img src="../assets/star_c.png"></li>
-						<li><img src="../assets/star_c.png"></li>
-						<li><img src="../assets/star_c.png"></li>
-						<li><img src="../assets/star_h.png"></li>
-						<li><img src="../assets/star_h.png"></li>
+						<li v-for='item in zhpj'><img src="../assets/star_c.png"></li>
 					</ul>
 				</div>
 			</div>
-			<div class='userpinlun'>
+			<div class='userpinlun' v-for='item in userpinlun'>
 				<div class='userpl'>
 					<dl>
-						<dt><span><img src="../assets/sb.png"></span></dt>
+						<dt><span><img :src="item.usertx"></span></dt>
 						<dd>
-							<span class='username'>刘德华</span>
-							<span class='pltime'>2016-09-15</span>
+							<span class='username'>{{item.userName}}</span>
+							<span class='pltime'>{{item.pltime}}</span>
 						</dd>
 					</dl>
 				</div>
 				<ul class='star'>
-					<li><img src="../assets/star_c.png"></li>
-					<li><img src="../assets/star_c.png"></li>
-					<li><img src="../assets/star_c.png"></li>
-					<li><img src="../assets/star_h.png"></li>
-					<li><img src="../assets/star_h.png"></li>
+					<li v-for='star in item.starval'><img src="../assets/star_c.png"></li>
 				</ul>
-				<p class='user_text'>CF最新最潮的枪支，没有一直比这个还要厉害，这是最新出版的最厉害的了，快来买吧。</p>
+				<p class='user_text'>{{item.pinlun}}</p>
 				<div class='user_pic'>
 					<ul>
-						<li><img src="../assets/pic6.jpg"></li>
-						<li><img src="../assets/pic6.jpg"></li>
-						<li><img src="../assets/pic6.jpg"></li>
-						<li><img src="../assets/pic6.jpg"></li>
-						<li><img src="../assets/pic6.jpg"></li>
+						<li v-for='pic in item.pinlunPic'><img :src="pic"></li>
 					</ul>
 				</div>
 				<div class='buyTime'>
 					<ul>
-						<li>类别：黑色</li>
-						<li>购买日期：2016-09-15</li>
+						<li>类别：{{item.type}}</li>
+						<li>购买日期：{{item.buyTime}}</li>
 					</ul>
 				</div>
 			</div>
@@ -171,8 +159,11 @@
 	import Swiper from '../js/app/swiper-3.4.2.min.js'
 	import Tab from '../js/app/tab.js'
 
-	/*pic4*/
+	/*pic*/
 	import pic4 from '../assets/pic4.jpg'
+	import pic5 from '../assets/pic5.jpg'
+	import tx from '../assets/sb.png'
+	import pic6 from '../assets/pic6.jpg'
 
 	export default{
 		data(){
@@ -182,7 +173,37 @@
 					pic4,
 					pic4,
 					pic4
-				]	
+				],
+				title : 'CF最新枪战模型X战1',
+				describe : 'CF最新最潮的枪支，没有一直比这个还要厉害，这是最新出版的最厉害的了，快来买吧。',
+				price : 299,
+				delPrice : 259,
+				kucun : 50000,
+				xl : 2000,
+				wpdescribePic : pic5,
+				zhpj : 3,
+				userpinlun : [
+					 {
+						usertx : tx,
+						userName : '黄建豪',
+						pltime : '2016-09-15',
+						starval : 4,
+						pinlun : 'CF最新最潮的枪支，没有一直比这个还要厉害，这是最新出版的最厉害的了，快来买吧!',
+						pinlunPic : [pic6,pic6,pic6,pic6],
+						type : '红色',
+						buyTime : '2016-09-15'
+					},
+					{
+						usertx : tx,
+						userName : '黄建豪',
+						pltime : '2016-09-15',
+						starval : 4,
+						pinlun : 'CF最新最潮的枪支，没有一直比这个还要厉害，这是最新出版的最厉害的了，快来买吧!',
+						pinlunPic : [pic6,pic6,pic6,pic6],
+						type : '红色',
+						buyTime : '2016-09-15'
+					}
+				]
 			}
 		},
 		mounted : function(){

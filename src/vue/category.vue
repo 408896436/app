@@ -19,7 +19,8 @@
 						<li class='lx1'><span class='price'>{{item.price}}</span><del class='delprice hui'>{{item.delprice}}</del></li>
 						<li class='lx2 hui'>销量：<span class='xiaoliang'>{{item.xiaoliang}}</span>评论：<span class='pinlun'>{{item.pinlun}}</span></li>
 					</ul>
-					<a class='buy' href="javascript:;" title='去购买'>去购买</a>
+					<!-- <a class='buy' href="javascript:;" title='去购买'>去购买</a> -->
+					<router-link class='buy' to="/details">去购买</router-link>
 				</dd>
 			</dl>
 		</div>

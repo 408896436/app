@@ -3,7 +3,7 @@
 		<!-- banner S-->
 		<div class="swiper-container">
        		<div class="swiper-wrapper">
-       			<div v-for='item in bannerPic' class="swiper-slide"><a href="javascript:;"><img :src="item"></a></div>
+       			<div v-for='item in bannerPic' class="swiper-slide"><router-link to="/details"><img :src="item"></router-link></div>
        		</div>
        		<div class="swiper-pagination"></div>
        	</div>
@@ -19,7 +19,7 @@
 		</div>
 
 		<div class='wplist'>
-			<h2 class='tit'>衣服<a href="javascript:;">更多></a></h2>
+			<h2 class='tit'>衣服<router-link to="/category/clothes">更多></router-link></h2>
 			<div class='wpbox'>
 				<dl v-for='item in wplist.clothes'>
 					<dt><router-link to="/details"><img :src="item.pic"></router-link></dt>
@@ -31,10 +31,10 @@
 			</div>
 		</div>
 		<div class='wplist'>
-			<h2 class='tit'>手办<a href="javascript:;">更多></a></h2>
+			<h2 class='tit'>手办<router-link to="/category/garage_kit">更多></router-link></h2>
 			<div class='wpbox'>
 				<dl v-for='item in wplist.garageKit'>
-					<dt><a href="javascript:;"><img :src="item.pic"></a></dt>
+					<dt><router-link to="/details"><img :src="item.pic"></router-link></dt>
 					<dd>
 						<p>{{item.name}}</p>
 						<p><span>{{item.nowPrice | price}}</span><del>{{item.delPrice | price}}</del></p>
