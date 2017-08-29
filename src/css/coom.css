@@ -5,3 +5,5 @@ h1{display: none;}
 img{display: block; width: 100%;}
 a{text-decoration: none;}
 .hui{color: #a6a6a6;}
+.nowPrice{color: #fb4c45; font-size: 0.44rem;}
+.deletePrice{color: #a6a6a6; font-size: 0.2rem;}

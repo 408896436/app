@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Index from './vue/index.vue'
 import Category from './vue/category.vue'
+import Details from './vue/details.vue'
 
 Vue.filter('price', function(val){
 	return '$' + val;
@@ -13,6 +14,7 @@ Vue.use(VueRouter);
 var routes = [
     {path:'/index', component:Index},
     {path:'/category/:name', component:Category},
+    {path:'/details', component:Details},
     {path:'*', redirect:'/index'}	
 ];
 

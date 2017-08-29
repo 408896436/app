@@ -3,7 +3,7 @@
 		<!-- banner S-->
 		<div class="swiper-container">
        		<div class="swiper-wrapper">
-       			<div v-for='item in bannerPic' class="swiper-slide"><a href="javascript:;"><img :src=item></a></div>
+       			<div v-for='item in bannerPic' class="swiper-slide"><a href="javascript:;"><img :src="item"></a></div>
        		</div>
        		<div class="swiper-pagination"></div>
        	</div>
@@ -22,7 +22,7 @@
 			<h2 class='tit'>衣服<a href="javascript:;">更多></a></h2>
 			<div class='wpbox'>
 				<dl v-for='item in wplist.clothes'>
-					<dt><a href="javascript:;"><img :src=item.pic></a></dt>
+					<dt><router-link to="/details"><img :src="item.pic"></router-link></dt>
 					<dd>
 						<p>{{item.name}}</p>
 						<p><span>{{item.nowPrice | price}}</span><del>{{item.delPrice | price}}</del></p>
@@ -34,7 +34,7 @@
 			<h2 class='tit'>手办<a href="javascript:;">更多></a></h2>
 			<div class='wpbox'>
 				<dl v-for='item in wplist.garageKit'>
-					<dt><a href="javascript:;"><img :src=item.pic></a></dt>
+					<dt><a href="javascript:;"><img :src="item.pic"></a></dt>
 					<dd>
 						<p>{{item.name}}</p>
 						<p><span>{{item.nowPrice | price}}</span><del>{{item.delPrice | price}}</del></p>
@@ -62,6 +62,7 @@
 	.index .wpbox dd p{margin-top: 0.1rem; padding-left:0.2rem;}
 	.index .wpbox dd span{color: red;}
 	.index .wpbox dd del{color: #a6a6a6; padding-left: 0.2rem; font-size: 0.2rem;}
+
 </style>
 
 <script>
