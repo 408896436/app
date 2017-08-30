@@ -42,10 +42,12 @@
 				</dl>
 			</div>
 		</div>
+		<bot-nav></bot-nav>
 	</div>
 </template>
 
 <style>
+	.index{overflow: hidden; padding-bottom: 0.7rem;}
 	.index .nav{height: 2.2rem; text-align: center; }
 	.index .nav li a{color:#000;}
 	.index .nav li{display: inline-block;  width: 0.8rem; text-align: center; margin: 0.3rem 0.3rem 0; }

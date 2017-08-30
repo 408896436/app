@@ -4,6 +4,16 @@ import Index from './vue/index.vue'
 import Category from './vue/category.vue'
 import Details from './vue/details.vue'
 
+/*自定义组件*/
+import BotNav from './vue/bot-nav.vue'
+const botNav = {
+	install : function(Vue){
+		Vue.component('bot-nav', BotNav);
+	}
+}
+Vue.use(botNav);
+
+/*过滤器*/
 Vue.filter('price', function(val){
 	return '$' + val;
 });

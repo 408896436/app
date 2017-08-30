@@ -104,10 +104,16 @@
 				</div>
 			</div>
 		</div>
+		<div class='bot_nav'>
+			<a class='a1' href="#"><span class='kf'></span>客服</a>
+			<a class='a2' href="#"><span class='gouwuche'><em>15</em></span>购物车</a>
+			<a class='a3' href="javascript:;" title='加入购物车'>加入购物车</a>
+			<a class='a4' href="javascript:;" title='立即购买'>立即购买</a>
+		</div>
 	</div>
 </template>
 <style>
-	
+	.details{overflow: hidden; padding-bottom: 0.1rem;}
 	.details .now_index{width: 0.5rem; height: 0.5rem; background: rgba(85,84,80, 0.5); border-radius: 50%; font-size: 0.24rem; color: #fff; text-align: center; line-height: 0.5rem; position: absolute; bottom: 0.3rem; right: 0.3rem; z-index: 9990; }
 
 	.details .wp_details,.details .price_xl{width: 7.1rem; margin: 0 auto; overflow: hidden;}
@@ -153,6 +159,16 @@
 	.details .userpinlun{overflow: hidden; margin-bottom: 0.6rem;}
 	.details .user_text{text-align: justify;}
 
+	.details .bot_nav{position: fixed; bottom: 0; left: 0; width: 100%; height: 1.1rem; background: #fff; font-size: 0.22rem;}
+	.details .bot_nav a{color: #000; display: block; float: left; position: relative; height: 100%; text-align: center; overflow: hidden;}
+	.details .bot_nav span{display: block; margin: 0.25rem auto 0;}
+	.details .bot_nav .kf{width: 0.37rem; height: 0.38rem; background: url('../assets/kf.png') no-repeat 0 0; background-size: 0.37rem;}
+	.details .bot_nav .gouwuche{ width: 0.38rem; height: 0.35rem; background: url('../assets/n3.jpg') no-repeat 0 0; background-size: 0.38rem;}
+	.details .bot_nav .a1, .details .bot_nav .a2{width: 1.57rem;}
+	.details .bot_nav .a3,.details .bot_nav .a4{width: 2.18rem; line-height: 1.1rem; color: #fff; font-size: 0.32rem;}
+	.details .bot_nav .a3{background: #fc9220;}
+	.details .bot_nav .a4{background: #fb4c45;}
+	.details .bot_nav em{font-style: normal; display: block; position: absolute; top: 0.2rem; right: 0.45rem; width: 0.28rem; height: 0.28rem; background: #fb4c45; color: #fff; border-radius: 50%; font-size: 0.16rem; line-height: 0.28rem;}
 </style>
 <script>
 	
